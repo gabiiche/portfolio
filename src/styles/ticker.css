@@ -1,0 +1,32 @@
+/* Ticker — the skills banner crossing the name (and portrait ticker on About) */
+
+.ticker {
+  overflow: hidden;
+  width: 100%;
+}
+
+.ticker__track {
+  display: flex;
+  gap: 54px;
+  width: max-content;
+  animation: ticker-scroll var(--ticker-duration) linear infinite;
+}
+
+.ticker__track p {
+  margin: 0;
+  color: var(--text-purple);
+  text-transform: lowercase;
+  white-space: nowrap;
+  font-size: var(--copy-font-size);
+  line-height: var(--copy-line-height);
+}
+
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); } /* track contains the list twice */
+}
+
+/* accessibility: static list if the user prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .ticker__track { animation: none; }
+}

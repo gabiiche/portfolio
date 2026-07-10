@@ -1,0 +1,46 @@
+/* NavLink — the Figma "li" component (Default / hover / Focus) */
+
+.nav-link-gt {
+  display: inline-flex;
+  align-items: center;
+  gap: 24px;
+  padding: 8px 16px;
+  position: relative;
+  overflow: hidden;
+
+  font-family: var(--font-secondary);
+  font-size: var(--links-font-size-desktop);
+  line-height: var(--links-line-height-desktop);
+  letter-spacing: var(--links-letter-spacing);
+  text-transform: lowercase;
+  text-decoration: none;
+  color: var(--text-purple);
+  white-space: nowrap;
+
+  transition: color var(--transition);
+}
+
+.nav-link-gt::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--bg-purple);
+  transform: translateY(100%);
+  transition: transform var(--transition);
+  z-index: -1;
+}
+
+.nav-link-gt:hover { color: var(--text-white); }
+.nav-link-gt:hover::before { transform: translateY(0); }
+
+.nav-link-gt:focus-visible {
+  outline: 3px solid var(--stroke-purple);
+  outline-offset: 0;
+}
+
+.nav-link-gt .icon { width: 20px; height: 20px; flex-shrink: 0; }
+.nav-link-gt .icon-lg { width: 40px; height: 40px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-link-gt, .nav-link-gt::before { transition: none; }
+}

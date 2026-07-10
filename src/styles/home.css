@@ -1,0 +1,32 @@
+/* Home — giant name + skills ticker crossing it */
+
+.home {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 72px 60px;
+}
+
+.hero-name {
+  position: relative;
+  padding: 0 112px;
+}
+
+.hero-name h1 {
+  font-size: clamp(64px, 12vw, 180px);
+  line-height: 0.95;
+  letter-spacing: 0.02em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+/* the ticker sits between the two lines of the name */
+.hero-name .ticker {
+  margin: 14px 0;
+}
+
+@media (max-width: 768px) {
+  .home { padding: 40px 24px; }
+  .hero-name { padding: 0; }
+}

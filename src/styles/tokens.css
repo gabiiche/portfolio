@@ -1,0 +1,38 @@
+/* Design tokens — from Figma variables (Portfolio 26) */
+:root {
+  /* background */
+  --bg-black: #0e0e0e;
+  --bg-purple: #d230ff;
+
+  /* text */
+  --text-purple: #d230ff;
+  --text-white: #f1f1f1;
+  --text-grey: #8a8a8a;
+
+  /* stroke */
+  --stroke-purple: rgba(210, 48, 255, 0.5);
+
+  /* type */
+  --font-secondary: "Benton Sans", Inter, sans-serif;
+  --links-font-size-desktop: 24px;
+  --links-line-height-desktop: 30px;
+  --links-letter-spacing: 8.4px;
+  --copy-font-size: 18px;
+  --copy-line-height: 20px;
+
+  /* motion */
+  --transition: 200ms ease-out;
+  --ticker-duration: 30s;
+}
+
+body {
+  background: var(--bg-black);
+  color: var(--text-grey);
+  font-family: var(--font-secondary);
+  font-size: var(--copy-font-size);
+}
+
+h1, h2, h3 {
+  color: var(--text-white);
+  font-weight: 700;
+}
