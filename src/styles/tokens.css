@@ -22,7 +22,14 @@
 
   /* motion */
   --transition: 200ms ease-out;
-  --ticker-duration: 30s;
+
+  /* intro animation */
+  --counter-duration: 1200ms;   /* 0 → 100 count-up */
+  --counter-exit-duration: 500ms; /* counter slides up out of view */
+  --reveal-duration: 300ms;       /* nav/name/footer slide up */
+  --reveal-offset: 24px;           /* how far below final position they start */
+  --ticker-reveal-duration: 800ms; /* ticker slides in from right */
+  --ticker-duration: 40s;          /* infinite loop speed */
 }
 
 body {
@@ -30,9 +37,12 @@ body {
   color: var(--text-grey);
   font-family: var(--font-secondary);
   font-size: var(--copy-font-size);
+  margin: 0;
+  overflow-x: hidden;
 }
 
 h1, h2, h3 {
   color: var(--text-white);
   font-weight: 700;
+  margin: 0;
 }

@@ -1,32 +1,113 @@
-/* Home — giant name + skills ticker crossing it */
+/* Home — full responsive from xs to xxl, Figma-accurate */
 
 .home {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  gap: 192px;                    /* xs default */
+  padding: 18px 48px;            /* xs default */
+}
+
+.home > .nav-wrap,
+.home > .header,
+.home > .footer-wrap {
+  width: 100%;
+  display: flex;
+}
+
+.home > .nav-wrap,
+.home > .footer-wrap {
+  align-items: center;
   justify-content: space-between;
-  padding: 72px 60px;
 }
 
-.hero-name {
+.home > .header {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 14px;
   position: relative;
-  padding: 0 112px;
 }
 
-.hero-name h1 {
-  font-size: clamp(64px, 12vw, 180px);
+.home .display {
+  font-size: clamp(56px, 15vw, 216px);
   line-height: 0.95;
-  letter-spacing: 0.02em;
   margin: 0;
   text-transform: uppercase;
+  color: var(--text-white);
+  white-space: nowrap;
 }
 
-/* the ticker sits between the two lines of the name */
-.hero-name .ticker {
-  margin: 14px 0;
+.home .header .ticker {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
 }
 
-@media (max-width: 768px) {
-  .home { padding: 40px 24px; }
-  .hero-name { padding: 0; }
+/* ---------- Breakpoints ---------- */
+
+/* sm ≥ 576 */
+@media (min-width: 576px) {
+  .home { padding: 18px 24px; gap: 192px; }
+}
+
+/* md ≥ 768 */
+@media (min-width: 768px) {
+  .home { padding: 48px 24px; gap: 240px; }
+}
+
+/* lg ≥ 992 */
+@media (min-width: 992px) {
+  .home { padding: 72px 16px; gap: 240px; }
+  .home > .nav-wrap,
+  .home > .header,
+  .home > .footer-wrap { padding: 0 82px; }
+  .home .footer-links { gap: 24px; }
+}
+
+/* xl ≥ 1200 */
+@media (min-width: 1200px) {
+  .home { padding: 72px 30px; gap: 204px; }
+  .home > .nav-wrap,
+  .home > .header,
+  .home > .footer-wrap { padding: 0 97px; }
+  .home .footer-links { gap: 72px; }
+}
+
+/* xxl ≥ 1400 */
+@media (min-width: 1400px) {
+  .home { padding: 72px 60px; gap: 192px; }
+  .home > .nav-wrap,
+  .home > .header,
+  .home > .footer-wrap { padding: 0 112px; }
+}
+
+/* ---------- Nav link type scales down on mobile ---------- */
+/* sm and xs use Mobile/links 18/30 (letter-spacing ~6.3px) */
+@media (max-width: 767.98px) {
+  .nav-link-gt {
+    font-size: 18px;
+    line-height: 30px;
+    letter-spacing: 6.3px;
+  }
+  .nav-link-gt .icon { width: 16px; height: 16px; }
+  .nav-link-gt .icon-lg { width: 32px; height: 32px; }
+}
+
+/* ---------- Footer: icons only on xs ---------- */
+@media (max-width: 575.98px) {
+  .footer-label { display: none; }
+  .home .footer-links { gap: 40px; }
+}
+
+/* ---------- Copyright ©2026 always Benton Sans 18px, letter-spacing 6.3px ---------- */
+.copyright {
+  color: var(--text-white);
+  font-size: 18px;
+  letter-spacing: 6.3px;
+  text-transform: lowercase;
+  margin: 0;
 }
