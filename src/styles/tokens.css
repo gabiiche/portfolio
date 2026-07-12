@@ -13,7 +13,8 @@
   --stroke-purple: rgba(210, 48, 255, 0.5);
 
   /* type */
-  --font-secondary: "Benton Sans", Inter, sans-serif;
+  --font-display: "Archivo Black", sans-serif;
+  --font-secondary: "Inter", sans-serif;
   --links-font-size-desktop: 24px;
   --links-line-height-desktop: 30px;
   --links-letter-spacing: 8.4px;
@@ -42,6 +43,7 @@ body {
 }
 
 h1, h2, h3 {
+  font-family: var(--font-display); 
   color: var(--text-white);
   font-weight: 700;
   margin: 0;
