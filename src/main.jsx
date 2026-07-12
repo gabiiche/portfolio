@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles/tokens.css";
 import "./styles/navlink.css";
 import "./styles/ticker.css";
+import "./styles/intro.css";
 import "./styles/home.css";
 import App from "./App";
 
