@@ -32,7 +32,7 @@
 
 .home .display {
   font-family: var(--font-display); 
-  font-size: clamp(56px, 15vw, 216px);
+  font-size: clamp(56px, 12vw, 216px);
   line-height: 0.95;
   margin: 0;
   text-transform: uppercase;
@@ -88,19 +88,20 @@
 
 /* ---------- Nav link type scales down on mobile ---------- */
 /* sm and xs use Mobile/links 18/30 (letter-spacing ~6.3px) */
-@media (max-width: 767.98px) {
+@media (max-width: 768px) {
   .nav-link-gt {
     font-size: 18px;
     line-height: 30px;
     letter-spacing: 6.3px;
+    align-items: normal;
   }
   .nav-link-gt .icon { width: 16px; height: 16px; }
   .nav-link-gt .icon-lg { width: 32px; height: 32px; }
+  .footer-label { display: none; }
 }
 
 /* ---------- Footer: icons only on xs ---------- */
-@media (max-width: 575.98px) {
-  .footer-label { display: none; }
+@media (max-width: 575px) {
   .home .footer-links { gap: 40px; }
 }
 
