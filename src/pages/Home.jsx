@@ -3,6 +3,10 @@ import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import Ticker from "../components/Ticker";
 import IntroCounter from "../components/IntroCounter";
+import SlideInUp from "../components/SlideInUp";
+import "../styles/home.css";
+import "../styles/ticker.css";
+
 
 let introHasPlayed = false;
 
@@ -19,25 +23,26 @@ useEffect(() => {
   return () => clearTimeout(t);
 }, [counterDone]);
 
-  const revealClass = revealed ? "in" : "";
 
   return (
     <>
       {!counterDone && <IntroCounter onFinish={() => setCounterDone(true)} />}
 
-      <div className="home">
-        <Nav className={`reveal delay-1 ${revealClass}`} />
+      {counterDone && (
+        <div className="home">
+          <Nav />
 
-        <header className={`header reveal delay-2 ${revealClass}`}>
-          <h1 className="display">Gabrielle</h1>
-          <div className={`ticker-slide-in ${tickerIn ? "in" : ""}`}>
-            <Ticker />
-          </div>
-          <h1 className="display">Toure</h1>
-        </header>
+          <header className="header">
+            <SlideInUp as="h1" className="display" trigger={counterDone}>Gabrielle</SlideInUp>
+            <div className={`ticker-slide-in ${tickerIn ? "in" : ""}`}>
+              <Ticker />
+            </div>
+            <SlideInUp as="h1" className="display" trigger={counterDone}>Toure</SlideInUp>
+          </header>
 
-        <Footer className={`reveal delay-3 ${revealClass}`} />
-      </div>
+          <Footer />
+        </div>
+      )}
     </>
   );
 }
