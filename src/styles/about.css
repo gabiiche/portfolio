@@ -1,0 +1,124 @@
+.about-main-gap {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(80px, 12vw, 102px);
+}
+
+.about-title {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 10vw, 78px);
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: var(--text-white);
+  margin: 0;
+}
+
+.about-intro {
+  font-family: var(--font-secondary);
+  font-size: var(--copy-font-size);
+  line-height: var(--copy-line-height);
+  color: var(--text-grey);
+}
+
+/* ========== Clients Section ========== */
+
+.about-clients {
+  width: 100%;
+}
+
+.about-clients .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 48px;
+}
+
+.about-section-title {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 10vw, 48px);
+  line-height: 1.15;
+  text-transform: lowercase;
+  color: var(--text-white);
+  margin: 0;
+}
+
+.clients-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.client-logo {
+  height: 30.68px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.client-logo img {
+  max-width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* ========== Portraits Section ========== */
+
+.about-portraits {
+  width: 100%;
+  margin: 48px 0;
+}
+
+.portraits-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Desktop: Static Grid */
+.portraits-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
+  width: 100%;
+}
+
+.portrait-item {
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 0;
+}
+
+.portrait-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Mobile: Ticker (scrolling) */
+.portraits-ticker {
+  width: 100%;
+  overflow: hidden;
+}
+
+.ticker__track--images {
+  gap: 24px;
+  width: max-content;
+  animation: ticker-scroll var(--ticker-duration) linear infinite;
+}
+
+.ticker__track--images .portrait-item {
+  flex-shrink: 0;
+  width: 241px;
+  height: 300px;
+}
+
+/* md ≥ 768 */
+@media (min-width: 768px) {
+  .about-intro { max-width: 597px; }
+}
+
+/* lg ≥ 992 */
+@media (min-width: 992px) {
+  .about-intro { max-width: 575px; }
+}
