@@ -50,7 +50,7 @@ const clientsColumn2 = ABOUT_CONTENT.clients.slice(midpoint);
 
 export default function About() {
   return (
-    <div className="home about-page">
+    <div className="home">
       <Nav />
 
       <main className="w-100 about-main-gap">

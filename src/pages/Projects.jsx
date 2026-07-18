@@ -1,0 +1,161 @@
+import { useState, useRef } from "react";
+import { Link } from "react-router-dom";
+import Nav from "../components/Nav";
+import Footer from "../components/Footer";
+import "../styles/projects.css";
+
+// Import project images
+import nhImage from "../assets/portrait-1.png";
+import ballantinesImage from "../assets/portrait-1.png";
+import ecobeatImage from "../assets/portrait-1.png";
+import mysteryGuestImage from "../assets/portrait-1.png";
+import dynamicJeunesImage from "../assets/portrait-1.png";
+
+const PROJECTS = [
+  {
+    id: "national-highways",
+    name: "National Highways",
+    slug: "national-highways",
+    tags: ["UI Design", "Design System", "UX Design", "Prototype", "Art Direction"],
+    image: nhImage,
+  },
+  {
+    id: "ballantines",
+    name: "Ballantine's",
+    slug: "ballantines",
+    tags: ["UI Design", "Design System", "Art Direction"],
+    image: ballantinesImage,
+  },
+  {
+    id: "ecobeat",
+    name: "Ecobeat",
+    slug: "ecobeat",
+    tags: ["UX Design", "UI Design", "Product Strategy", "Prototype", "Front-end", "Art Direction"],
+    image: ecobeatImage,
+  },
+  {
+    id: "mystery-guest",
+    name: "Mystery Guest",
+    slug: "mystery-guest",
+    tags: ["Branding", "Brand Book", "Art Direction"],
+    image: mysteryGuestImage,
+  },
+  {
+    id: "dynamic-jeunes",
+    name: "Dynamic Jeunes",
+    slug: "dynamic-jeunes",
+    tags: ["UX Design", "UI Design", "Project Management", "Wordpress", "Front-end", "Back-end"],
+    image: dynamicJeunesImage,
+  },
+];
+
+// Image dimensions (match CSS)
+const IMAGE_WIDTH = 300;
+const IMAGE_HEIGHT = 400;
+const OFFSET = 20;
+
+export default function Projects() {
+  const [hoveredProject, setHoveredProject] = useState(null);
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const containerRef = useRef(null);
+
+  const handleMouseMove = (e) => {
+    let x = e.clientX + OFFSET;
+    let y = e.clientY + OFFSET;
+
+    // Prevent image going off right edge of screen
+    if (x + IMAGE_WIDTH > window.innerWidth) {
+      x = e.clientX - IMAGE_WIDTH - OFFSET;
+    }
+
+    // Prevent image going off bottom of screen
+    if (y + IMAGE_HEIGHT > window.innerHeight) {
+      y = e.clientY - IMAGE_HEIGHT - OFFSET;
+    }
+
+    // Prevent image going off left edge
+    if (x < 0) {
+      x = OFFSET;
+    }
+
+    // Prevent image going off top
+    if (y < 0) {
+      y = OFFSET;
+    }
+
+    setMousePos({ x, y });
+  };
+
+  const handleProjectHover = (projectId) => {
+    setHoveredProject(projectId);
+  };
+
+  const handleProjectLeave = () => {
+    setHoveredProject(null);
+  };
+
+  return (
+    <div className="home projects-page" ref={containerRef} onMouseMove={handleMouseMove}>
+      <Nav />
+
+      <main className="w-100 projects-main">
+        
+        {/* Hero Section */}
+        <section className="row">
+          <div className="col-12">
+            <h1 className="projects-title">Projects</h1>
+          </div>
+        </section>
+
+        {/* Projects List */}
+        <section className="projects-list">
+          {PROJECTS.map((project) => (
+            <div key={project.id} className="project-item">
+              <div className="project-description">
+                <Link
+                  to={`/projects/${project.slug}`}
+                  className="project-link"
+                  onMouseEnter={() => handleProjectHover(project.id)}
+                  onMouseLeave={handleProjectLeave}
+                >
+                  <h2 className="project-name">{project.name}</h2>
+                  <div className="project-arrow">→</div>
+                </Link>
+
+                <div className="project-tags">
+                  {project.tags.map((tag, index) => (
+                    <span key={index} className="project-tag">
+                      {tag}
+                      {index < project.tags.length - 1 && <span className="tag-separator">|</span>}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div className="project-divider"></div>
+            </div>
+          ))}
+        </section>
+
+      </main>
+
+      {/* Hover Image - Shows near cursor */}
+      {hoveredProject && (
+        <div
+          className="project-hover-image"
+          style={{
+            left: `${mousePos.x}px`,
+            top: `${mousePos.y}px`,
+          }}
+        >
+          <img
+            src={PROJECTS.find((p) => p.id === hoveredProject)?.image}
+            alt=""
+          />
+        </div>
+      )}
+
+      <Footer />
+    </div>
+  );
+}
