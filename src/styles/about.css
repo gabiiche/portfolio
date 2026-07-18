@@ -11,6 +11,7 @@
   text-transform: uppercase;
   color: var(--text-white);
   margin: 0;
+  margin-top: -16px;
 }
 
 .about-intro {
@@ -19,6 +20,7 @@
   line-height: var(--copy-line-height);
   color: var(--text-grey);
 }
+
 
 /* ========== Clients Section ========== */
 

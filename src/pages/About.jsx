@@ -17,6 +17,10 @@ import googleLogo from "../assets/10-Google.svg";
 import luckyLogo from "../assets/11-Lucky.svg";
 import sugarmooLogo from "../assets/12-Sugarmoo.svg";
 
+import Ticker from "../components/Ticker";  
+import "../styles/ticker.css";  
+import portrait1 from "../assets/portrait-1.png";
+
 const ABOUT_CONTENT = {
   title: "About me",
   intro: [
@@ -37,10 +41,12 @@ const ABOUT_CONTENT = {
     { name: "Lucky Bet", url: luckyLogo },
     { name: "Sugarmoo", url: sugarmooLogo },
   ],
-  portraits: [
-    "/images/portrait-1.jpg",
-  ],
+  portrait1: [portrait1],
 };
+const PORTRAITS = [portrait1];
+const midpoint = Math.ceil(ABOUT_CONTENT.clients.length / 2);
+const clientsColumn1 = ABOUT_CONTENT.clients.slice(0, midpoint);
+const clientsColumn2 = ABOUT_CONTENT.clients.slice(midpoint);
 
 export default function About() {
   return (
@@ -63,10 +69,10 @@ export default function About() {
         </section>
 
         <section className="row">
-          <div className="col-12 col-lg-6">
+          <div className="col-12 col-xl-6">
             <h2 className="about-section-title">Clients</h2>
           </div>
-          <div className="col-12 col-lg-6 mt-lg-0 mt-5">
+          <div className="col-xl-6 d-xl-block d-lg-none d-md-none d-sm-block col-12 mt-lg-0 mt-5">
             <div className="clients-grid">
               {ABOUT_CONTENT.clients.map((item, index) => (
                 <div key={index} className="client-logo">
@@ -75,11 +81,33 @@ export default function About() {
               ))}
             </div>
           </div>
+
+          <div className="row">
+            <div className="col-6 mt-5 d-xl-none d-lg-block d-md-block d-sm-none d-none">
+                <div className="clients-grid">
+    {clientsColumn1.map((item, index) => (
+      <div key={index} className="client-logo">
+        <img src={item.url} alt={item.name} />
+      </div>
+    ))}
+  </div>
+                    </div>
+                    <div className="col-6 mt-5 d-xl-none d-lg-block d-md-block d-sm-none d-none">
+                      <div className="clients-grid">
+    {clientsColumn2.map((item, index) => (
+      <div key={index} className="client-logo">
+        <img src={item.url} alt={item.name} />
+      </div>
+    ))}
+  </div>
+                    </div>
+            </div>
+
         </section>
 
-        {/* Portrait Images Ticker Section */}
-        <section className="about-portraits">
-        </section>
+<section className="about-portraits">
+  <Ticker items={PORTRAITS} isImage={true} /> 
+</section>
 
       </main>
 
