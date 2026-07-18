@@ -5,6 +5,10 @@
   animation: ticker-scroll var(--ticker-duration) linear infinite;
 }
 
+.ticker__track--images {
+  animation: ticker-scroll 60s linear infinite;
+}
+
 .ticker__track p {
   margin: 0;
   color: var(--text-purple);
@@ -12,6 +16,20 @@
   white-space: nowrap;
   font-size: var(--copy-font-size);
   line-height: var(--copy-line-height);
+}
+
+.ticker-image-item {
+  flex-shrink: 0;
+  width: 241px;
+  height: 300px;
+  overflow: hidden;
+}
+
+.ticker-image-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 @keyframes ticker-scroll {

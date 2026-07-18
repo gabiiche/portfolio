@@ -8,20 +8,22 @@ import "../styles/home.css";
 import "../styles/ticker.css";
 
 
-let introHasPlayed = false;
-
 export default function Home() {
-const [counterDone, setCounterDone] = useState(introHasPlayed);
-const [revealed, setRevealed] = useState(introHasPlayed);
-const [tickerIn, setTickerIn] = useState(introHasPlayed);
-
-useEffect(() => {
-  if (!counterDone) return;
-  introHasPlayed = true;  
-  requestAnimationFrame(() => setRevealed(true));
-  const t = setTimeout(() => setTickerIn(true), 400);
-  return () => clearTimeout(t);
-}, [counterDone]);
+const [counterDone, setCounterDone] = useState(() => {
+    return localStorage.getItem("introHasPlayed") === "true";
+  });
+  const [revealed, setRevealed] = useState(counterDone);
+  const [tickerIn, setTickerIn] = useState(counterDone);
+ 
+  useEffect(() => {
+    if (!counterDone) return;
+   
+    localStorage.setItem("introHasPlayed", "true");
+    
+    requestAnimationFrame(() => setRevealed(true));
+    const t = setTimeout(() => setTickerIn(true), 400);
+    return () => clearTimeout(t);
+  }, [counterDone]);
 
 
   return (
