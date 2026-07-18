@@ -1,0 +1,206 @@
+/* ========== PROJECTS PAGE ========== */
+
+
+.projects-main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 48px;
+}
+
+/* ========== HERO SECTION ========== */
+
+.projects-title {
+  font-family: var(--font-display, "Archivo Black", sans-serif);
+  font-size: clamp(36px, 10vw, 78px);
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: var(--text-white, #f1f1f1);
+  margin: 0;
+  letter-spacing: 0;
+}
+
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 90px;
+  width: 100%;
+}
+
+.project-item {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(18px, 4vw, 24px);
+  width: 100%;
+}
+
+.project-description {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(12px, 3vw, 18px);
+}
+
+/* Project Link */
+.project-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.project-link:hover {
+  opacity: 0.7;
+}
+
+.project-name {
+  font-family: var(--font-display, "Archivo Black", sans-serif);
+  font-size: clamp(36px, 8vw, 48px);
+  line-height: 1.15;
+  text-transform: lowercase;
+  color: var(--text-white, #f1f1f1);
+  margin: 0;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
+.project-arrow {
+  font-family: var(--font-secondary, "Inter", sans-serif);
+  font-size: clamp(16px, 4vw, 20px);
+  color: var(--text-white, #f1f1f1);
+  flex-shrink: 0;
+  margin-left: clamp(12px, 3vw, 24px);
+  transition: transform 0.3s ease;
+}
+
+.project-link:hover .project-arrow {
+  transform: translateX(4px);
+}
+
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  align-items: center;
+}
+
+.project-tag {
+  font-family: var(--font-secondary, "Inter", sans-serif);
+  font-size: clamp(14px, 2.5vw, 18px);
+  line-height: 1.4;
+  text-transform: lowercase;
+  color: var(--text-grey, #8a8a8a);
+  letter-spacing: 0;
+}
+
+.tag-separator {
+  margin: 0 clamp(8px, 2vw, 18px); 
+  color: var(--text-grey, #8a8a8a);
+}
+
+.project-divider {
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(90deg, rgba(138, 138, 138, 0.3) 0%, rgba(138, 138, 138, 0) 100%);
+  margin: clamp(12px, 3vw, 24px) 0;
+}
+
+/* ========== HOVER IMAGE EFFECT ========== */
+
+.project-hover-image {
+  position: fixed;
+  pointer-events: none;
+  z-index: 1000;
+  display: block; 
+}
+
+.project-hover-image img {
+  width: 300px;   
+  height: 400px;
+  display: block;  
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Show hover image when project is hovered */
+.project-hover-image {
+  display: block;
+}
+
+/* ========== RESPONSIVE ========== */
+
+/* Tablet (768px+) */
+@media (min-width: 768px) {
+  .project-name {
+    font-size: clamp(40px, 8vw, 48px);
+  }
+}
+
+/* Desktop lg (992px+) */
+@media (min-width: 992px) {
+
+  .projects-main {
+    padding: 0 clamp(82px, 8vw, 112px);
+    gap: 90px;
+  }
+
+  .projects-title {
+    font-size: 78px;
+  }
+
+  .project-name {
+    font-size: 48px;
+  }
+
+  .projects-list {
+    gap: 48px;
+  }
+}
+
+/* Desktop xl (1200px+) */
+@media (min-width: 1200px) {
+  .projects-main {
+    padding: 0 97px;
+  }
+}
+
+/* Desktop xxl (1400px+) */
+@media (min-width: 1400px) {
+
+
+  .projects-main {
+    padding: 0 112px;
+  }
+
+  .project-hover-image img {
+    width: 300px;
+    height: 400px;
+  }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  .project-arrow {
+    transition: none;
+  }
+
+  .project-link:hover .project-arrow {
+    transform: none;
+  }
+
+  .project-hover-image img {
+    animation: none;
+  }
+}
