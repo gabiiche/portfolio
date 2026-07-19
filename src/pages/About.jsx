@@ -50,10 +50,10 @@ const clientsColumn2 = ABOUT_CONTENT.clients.slice(midpoint);
 
 export default function About() {
   return (
-    <div className="home">
+    <div className="">
       <Nav />
 
-      <main className="w-100 about-main-gap">
+      <main className="w-100 about-main about-title-section">
         
         <section className="row">
           <div className="col-12 col-lg-6">
