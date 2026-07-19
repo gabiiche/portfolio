@@ -5,7 +5,6 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  gap: 48px;
 }
 
 /* ========== HERO SECTION ========== */
@@ -23,8 +22,9 @@
 .projects-list {
   display: flex;
   flex-direction: column;
-  gap: 90px;
+  gap: 48px;
   width: 100%;
+  margin-top: 48px;
 }
 
 .project-item {
@@ -51,8 +51,8 @@
   transition: opacity 0.3s ease;
 }
 
-.project-link:hover {
-  opacity: 0.7;
+.project-link:hover .project-name {
+  color: var(--text-grey, #8a8a8a);
 }
 
 .project-name {
@@ -63,20 +63,19 @@
   color: var(--text-white, #f1f1f1);
   margin: 0;
   letter-spacing: 0;
-  white-space: nowrap;
+
 }
 
 .project-arrow {
-  font-family: var(--font-secondary, "Inter", sans-serif);
-  font-size: clamp(16px, 4vw, 20px);
-  color: var(--text-white, #f1f1f1);
-  flex-shrink: 0;
+  width: clamp(16px, 4vw, 20px);
+  height: clamp(16px, 4vw, 20px);
   margin-left: clamp(12px, 3vw, 24px);
   transition: transform 0.3s ease;
+  display: block;
 }
 
 .project-link:hover .project-arrow {
-  transform: translateX(4px);
+  transform: translate(6px, -6px); 
 }
 
 
@@ -105,7 +104,7 @@
   height: 1px;
   width: 100%;
   background: linear-gradient(90deg, rgba(138, 138, 138, 0.3) 0%, rgba(138, 138, 138, 0) 100%);
-  margin: clamp(12px, 3vw, 24px) 0;
+  margin-top: clamp(12px, 3vw, 24px) 0;
 }
 
 /* ========== HOVER IMAGE EFFECT ========== */
@@ -134,10 +133,6 @@
   }
 }
 
-/* Show hover image when project is hovered */
-.project-hover-image {
-  display: block;
-}
 
 /* ========== RESPONSIVE ========== */
 
@@ -151,11 +146,6 @@
 /* Desktop lg (992px+) */
 @media (min-width: 992px) {
 
-  .projects-main {
-    padding: 0 clamp(82px, 8vw, 112px);
-    gap: 90px;
-  }
-
   .projects-title {
     font-size: 78px;
   }
@@ -165,7 +155,32 @@
   }
 
   .projects-list {
-    gap: 48px;
+    gap: 32px;
+  }
+}
+
+@media (min-width: 375px) {
+  .projects-main {
+    padding: 0 18px;
+  }
+}
+
+@media (min-width: 576px) {
+  .projects-main {
+    padding: 0 18px;
+  }
+}
+
+@media (min-width: 768px) {
+  .projects-main {
+    padding: 0 24px;
+  }
+}
+
+
+@media (min-width: 992px) {
+  .projects-main {
+    padding: 0 98px;
   }
 }
 
@@ -178,7 +193,6 @@
 
 /* Desktop xxl (1400px+) */
 @media (min-width: 1400px) {
-
 
   .projects-main {
     padding: 0 112px;
@@ -202,5 +216,23 @@
 
   .project-hover-image img {
     animation: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .projects-list {
+    margin-top: 90px;
+  }
+  .projects-title{
+    margin-top: 150px;
+  }
+}
+
+@media (max-width: 767px) {
+  .projects-list {
+    margin-top: 48px;
+  }
+    .projects-title{
+    margin-top: 48px;
   }
 }

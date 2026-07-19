@@ -1,7 +1,54 @@
-.about-main-gap {
+/* ========== ABOUT PAGE ========== */
+
+.about-main {
   display: flex;
   flex-direction: column;
   gap: clamp(80px, 12vw, 102px);
+}
+
+/* Padding responsive like Projects */
+.about-main {
+  padding: 0 18px;
+}
+
+.about-title-section {
+  margin-top: 48px;  /* xs/sm */
+}
+
+@media (min-width: 768px) {
+  .about-title-section {
+    margin-top: 150px;  /* md+ */
+  }
+}
+
+@media (min-width: 576px) {
+  .about-main {
+    padding: 0 24px;
+  }
+}
+
+@media (min-width: 768px) {
+  .about-main {
+    padding: 0 24px;
+  }
+}
+
+@media (min-width: 992px) {
+  .about-main {
+    padding: 0 clamp(82px, 8vw, 112px);
+  }
+}
+
+@media (min-width: 1200px) {
+  .about-main {
+    padding: 0 97px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .about-main {
+    padding: 0 112px;
+  }
 }
 
 .about-title {
@@ -20,7 +67,6 @@
   line-height: var(--copy-line-height);
   color: var(--text-grey);
 }
-
 
 /* ========== Clients Section ========== */
 
@@ -63,11 +109,12 @@
   object-fit: contain;
 }
 
-/* ========== Portraits Section ========== */
+/* ========== Portraits Section - FULL WIDTH ========== */
 
 .about-portraits {
-  width: 100%;
-  margin: 48px 0;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  padding: 0;
 }
 
 .portraits-container {
@@ -115,12 +162,18 @@
   height: 300px;
 }
 
+/* ========== RESPONSIVE ========== */
+
 /* md ≥ 768 */
 @media (min-width: 768px) {
-  .about-intro { max-width: 597px; }
+  .about-intro { 
+    max-width: 597px; 
+  }
 }
 
 /* lg ≥ 992 */
 @media (min-width: 992px) {
-  .about-intro { max-width: 575px; }
+  .about-intro { 
+    max-width: 575px; 
+  }
 }

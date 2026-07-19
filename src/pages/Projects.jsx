@@ -3,13 +3,16 @@ import { Link } from "react-router-dom";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import "../styles/projects.css";
+import SlideInUp from "../components/SlideInUp";
 
-// Import project images
 import nhImage from "../assets/portrait-1.png";
 import ballantinesImage from "../assets/portrait-1.png";
 import ecobeatImage from "../assets/portrait-1.png";
 import mysteryGuestImage from "../assets/portrait-1.png";
 import dynamicJeunesImage from "../assets/portrait-1.png";
+
+import arrowWhite from "../assets/arrow-projects-white.svg";
+import arrowGrey from "../assets/arrow-projects-grey.svg";
 
 const PROJECTS = [
   {
@@ -95,7 +98,7 @@ export default function Projects() {
   };
 
   return (
-    <div className="home projects-page" ref={containerRef} onMouseMove={handleMouseMove}>
+    <div className="projects-page" ref={containerRef} onMouseMove={handleMouseMove}>
       <Nav />
 
       <main className="w-100 projects-main">
@@ -103,7 +106,7 @@ export default function Projects() {
         {/* Hero Section */}
         <section className="row">
           <div className="col-12">
-            <h1 className="projects-title">Projects</h1>
+            <SlideInUp as="h1" className="projects-title">Projects</SlideInUp>
           </div>
         </section>
 
@@ -119,7 +122,11 @@ export default function Projects() {
                   onMouseLeave={handleProjectLeave}
                 >
                   <h2 className="project-name">{project.name}</h2>
-                  <div className="project-arrow">→</div>
+                  <img 
+  src={hoveredProject === project.id ? arrowGrey : arrowWhite} 
+  alt="Arrow" 
+  className="project-arrow"
+/>
                 </Link>
 
                 <div className="project-tags">

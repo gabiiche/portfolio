@@ -1,0 +1,126 @@
+.nav-wrap {
+  width: 100%;
+  padding: 18px 18px 0 18px;  /* xs: top 18px */
+  display: flex;
+  align-items: center;
+  justify-content: space-between !important;
+}
+
+/* Nav link type scales down on mobile */
+.nav-link-gt {
+  font-size: 18px;
+  line-height: 30px;
+  letter-spacing: 6.3px;
+  align-items: normal;
+}
+
+.nav-link-gt .icon { 
+  width: 16px; 
+  height: 16px; 
+}
+
+.nav-link-gt .icon-lg { 
+  width: 32px; 
+  height: 32px; 
+}
+
+/* Footer styling */
+.footer-wrap {
+  width: 100%;
+  padding: 0 18px 18px 18px;  /* xs: bottom 18px */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+@media (max-width: 768px) {
+  .footer-label { display: none; }
+}
+
+
+.footer-links { 
+  gap: 40px;
+}
+
+@media (min-width: 576px) {
+  .footer-links { gap: 40px; }
+}
+
+@media (min-width: 992px) {
+  .footer-links { gap: 24px; }
+}
+
+@media (min-width: 1200px) {
+  .footer-links { gap: 72px; }
+}
+
+/* Copyright */
+.copyright {
+  color: var(--text-white);
+  font-size: 18px;
+  letter-spacing: 6.3px;
+  text-transform: lowercase;
+  margin: 0;
+}
+
+/* Main content */
+main {
+  width: 100%;
+  padding: 0;
+}
+
+@media (min-width: 375px) {
+  .nav-wrap {
+    padding: 18px 24px 0 24px;  /* sm: top 18px */
+  }
+  .footer-wrap {
+    padding: 48px 24px 18px 24px;  /* sm: bottom 18px */
+  }
+}
+
+
+@media (min-width: 576px) {
+  .nav-wrap {
+    padding: 18px 24px 0 24px;  /* sm: top 18px */
+  }
+  .footer-wrap {
+    padding: 48px 24px 18px 24px;  /* sm: bottom 18px */
+  }
+}
+
+@media (min-width: 768px) {
+  .nav-wrap {
+    padding: 48px 24px 0 24px;  /* md: top 48px */
+  }
+  .footer-wrap {
+    padding: 48px 24px 48px 24px;  /* md: bottom 48px */
+  }
+}
+
+@media (min-width: 992px) {
+  .nav-wrap {
+    padding: 72px 82px 0 82px;  /* lg: top 72px */
+  }
+  .footer-wrap {
+    padding: 150px 82px 72px 82px;  /* lg: bottom 72px */
+  }
+}
+
+@media (min-width: 1200px) {
+  .nav-wrap {
+    padding: 72px 97px 0 97px;  /* xl: top 72px */
+  }
+  .footer-wrap {
+    padding: 150px 97px 72px 97px;  /* xl: bottom 72px */
+  }
+}
+
+@media (min-width: 1400px) {
+  .nav-wrap {
+    padding: 72px 112px 0 112px;  /* xxl: top 72px */
+  }
+  .footer-wrap {
+    padding: 150px 112px 72px 112px;  /* xxl: bottom 72px */
+  }
+}

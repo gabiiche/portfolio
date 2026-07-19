@@ -4,6 +4,7 @@ import IconEmail from "../assets/email.svg";
 import IconLinkedin from "../assets/Linkedin.svg";
 import IconEmailWhite from "../assets/email-white.svg";
 import IconLinkedinWhite from "../assets/Linkedin-white.svg";
+import "../styles/nav-footer.css";
 
 function FooterLink({ href, icon, iconHover, label, ariaLabel }) {
   return (
