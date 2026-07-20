@@ -54,28 +54,28 @@ export default function ProjectDetail() {
   }
 
   return (
-    <div className="project-detail-page">
+    <div className="">
       <Nav />
 
-      <main className="w-100 project-detail-main">
-
-
-<div className="row align-items-center">
-  <div className="d-xl-block col-xxl-6 col-xl-6 d-lg-none">
-    <div className="project-detail-hero-image">
-      <img src={project.heroImage} alt={project.title} />
+<div className="container-fluid">
+  <div className="align-items-center row">
+    <div className="d-xl-block col-xxl-5 col-xl-5 d-lg-none">
+      <div className="project-detail-hero-image">
+        <img src={project.heroImage} alt={project.title} />
+      </div>
     </div>
-  </div>
-  
-  <div className="col-xxl-6 col-xl-6 col-lg-12 solo-paragraph">
-    <h1 className="projects-title remove-margin">{project.title}</h1>
-    <div className="project-detail-intro-text mt-5">
-      {project.intro.split('\n\n').map((paragraph, index) => (
-        <p key={index}>{paragraph}</p>
-      ))}
+    
+    <div className="col-xxl-6 col-xl-6 col-lg-12 solo-paragraph">
+      <h1 className="projects-title remove-margin">{project.title}</h1>
+      <div className="project-detail-intro-text mt-5">
+        {project.intro.split('\n\n').map((paragraph, index) => (
+          <p key={index}>{paragraph}</p>
+        ))}
+      </div>
     </div>
   </div>
 </div>
+<main className="project-detail-main">
      {/* Images with captions */}
         {project.images.map((image, index) => (
           <div key={index}>
