@@ -57,7 +57,7 @@
 
 .project-name {
   font-family: var(--font-display, "Archivo Black", sans-serif);
-  font-size: clamp(36px, 8vw, 48px);
+  font-size: clamp(24px, 8vw, 48px);
   line-height: 1.15;
   text-transform: lowercase;
   color: var(--text-white, #f1f1f1);
