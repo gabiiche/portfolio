@@ -5,11 +5,11 @@ import Footer from "../components/Footer";
 import "../styles/projects.css";
 import SlideInUp from "../components/SlideInUp";
 
-import nhImage from "../assets/portrait-1.png";
-import ballantinesImage from "../assets/portrait-1.png";
-import ecobeatImage from "../assets/portrait-1.png";
-import mysteryGuestImage from "../assets/portrait-1.png";
-import dynamicJeunesImage from "../assets/portrait-1.png";
+import nhImage from "../assets/screen/nh.png";
+import ballantinesImage from "../assets/screen/ballantines.png";
+import ecobeatImage from "../assets/screen/ecobeat.png";
+import mysteryGuestImage from "../assets/screen/my.png";
+import dynamicJeunesImage from "../assets/screen/dy.png";
 
 import arrowWhite from "../assets/arrow-projects-white.svg";
 import arrowGrey from "../assets/arrow-projects-grey.svg";
@@ -52,9 +52,8 @@ const PROJECTS = [
   },
 ];
 
-// Image dimensions (match CSS)
 const IMAGE_WIDTH = 300;
-const IMAGE_HEIGHT = 400;
+const IMAGE_HEIGHT = 300;
 const OFFSET = 20;
 
 export default function Projects() {
@@ -66,22 +65,22 @@ export default function Projects() {
     let x = e.clientX + OFFSET;
     let y = e.clientY + OFFSET;
 
-    // Prevent image going off right edge of screen
+
     if (x + IMAGE_WIDTH > window.innerWidth) {
       x = e.clientX - IMAGE_WIDTH - OFFSET;
     }
 
-    // Prevent image going off bottom of screen
+
     if (y + IMAGE_HEIGHT > window.innerHeight) {
       y = e.clientY - IMAGE_HEIGHT - OFFSET;
     }
 
-    // Prevent image going off left edge
+
     if (x < 0) {
       x = OFFSET;
     }
 
-    // Prevent image going off top
+
     if (y < 0) {
       y = OFFSET;
     }
