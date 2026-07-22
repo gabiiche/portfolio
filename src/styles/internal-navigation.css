@@ -1,0 +1,145 @@
+/* Project Navigation Component Styles */
+
+.project-navigation {
+  width: 100%;
+  margin-top: 48px;
+}
+
+.project-navigation__divider {
+  height: 1px;
+  width: 100%;
+  background-color: #8a8a8a;
+  border: none;
+}
+
+.project-navigation__gap {
+  height: 48px;
+}
+
+.project-navigation__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+  padding-left: 18px;
+  padding-right: 18px;
+}
+
+.project-navigation__back-btn {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-navigation__back-btn:hover {
+  opacity: 0.7;
+}
+
+.project-navigation__arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  transform: scaleY(-1) rotate(180deg);
+}
+
+.project-navigation__back-text {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 30px;
+  color: #f1f1f1;
+  letter-spacing: 8.4px;
+  text-transform: lowercase;
+  white-space: nowrap;
+}
+
+.project-navigation__next-link {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.project-navigation__next-link:hover {
+  opacity: 0.7;
+}
+
+.project-navigation__next-text {
+  margin: 0;
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 50px;
+  color: #f1f1f1;
+  text-transform: lowercase;
+  white-space: nowrap;
+}
+
+/* Responsive Design */
+
+@media (min-width: 992px) {
+  .project-navigation__content {
+    padding-left: 98px;
+    padding-right: 98px;
+  }
+}
+
+/* Desktop lg (1200px+) */
+@media (min-width: 1200px) {
+  .project-navigation__content {
+    padding-left: 97px;
+    padding-right: 97px;
+  }
+}
+
+/* Desktop xl (1440px+) */
+@media (min-width: 1440px) {
+  .project-navigation__content {
+    padding-left: 127px;
+    padding-right: 127px;
+  }
+}
+
+
+@media (max-width: 375px) {
+  .project-navigation__content {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+}
+
+@media (max-width: 1024px) {
+
+  .project-navigation__next-text {
+    font-size: 36px;
+    line-height: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .project-navigation__content {
+    height: 40px;
+  }
+
+  .project-navigation__back-text {
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 6.3px;
+  }
+
+  .project-navigation__next-text {
+    font-size: 24px;
+    line-height: 28px;
+  }
+}
