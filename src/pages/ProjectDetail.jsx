@@ -2,6 +2,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import InternalNavigation from "../components/InternalNavigation"; 
+import SlideInView from "../components/SlideInView";
 import "../styles/project-detail.css";
 
 import nationalhighwayHero from "../assets/nh/mock-phone-solo.png";
@@ -46,7 +47,7 @@ const PROJECTS_DATA = {
     "national-highways": {
     title: "National Highways",
     heroImage: nationalhighwayHero,
-    intro: "National Highways wanted to refresh the UX and UI of four key pages, bringing a more modern, editorial feel to the experience. Working at Oliver, an in-house agency model, I was on the project from start to finish. The client gave us more flexibility this time, on both the UX and the branding, guided by moodboards rather than strict guidelines, which left real room for design decisions.\n\nI designed all four pages, collaborating closely with the UX designer to question and improve the wireframes. I built the prototype, contributed to the design system, and prepared the developer documentation. In the lead designer's absence, I handled the design production autonomously. Accessibility was a strict requirement across all of Oliver's work, and every component was designed to meet it.",
+    intro: "National Highways wanted to refresh the UX and UI of four key pages, bringing a more modern, editorial feel to the experience. Working at Oliver, an in-house agency model, I was on the project from start to finish. The client gave us more flexibility, on both the UX and the branding, guided by moodboards rather than strict guidelines.\n\nI designed pages, collaborating closely with the UX designer to question and improve the wireframes. I built the prototype, contributed to the design system, and prepared the developer documentation. In the lead designer's absence, I handled the design production autonomously. Accessibility was a strict requirement across all of Oliver's work, and every component was designed to meet it.",
     images: [
       {
         src: nationalhighwayDesktop,
@@ -94,7 +95,7 @@ const PROJECTS_DATA = {
   "ecobeat": {
     title: "Ecobeat",
     heroImage: ecobeatHero,
-    intro: "Ecobeat is an AI-powered environmental monitoring product by Highline Global, the agency where I worked before Oliver. Its connected pods track electricity, water, temperature and more across a client's locations, helping businesses like hotels cut resource waste.\n\nAs the only designer in the agency, I rethought the product beyond its UX and UI. The app showed raw numbers with nothing to compare them against, so I restructured the dashboard and reworked its sections to give the data meaning: clear savings and alerts views, reports translating consumption into money saved or lost, comparisons between locations, and tips based on their records. I built the design system and prototype, and presented the work to the leadership.",
+    intro: "Ecobeat is an AI-powered environmental monitoring product by Highline Global, the agency where I worked before. Its connected pods track electricity, water, temperature and more across a client's locations, helping businesses like hotels cut resource waste.\n\nAs the only designer in the agency, I rethought the product beyond its UX and UI. The app showed raw numbers with nothing to compare them against, so I restructured the dashboard and reworked its sections to give the data meaning: clear savings and alerts views, reports translating consumption into money saved or lost, comparisons between locations, and tips based on their records. I built the design system and prototype, and presented the work to the leadership.",
     images: [
       {
         src: ecobeatDesktop,
@@ -182,13 +183,13 @@ export default function ProjectDetail() {
 
   if (!project) {
     return (
-      <div className="home">
+      <SlideInView className="home">
         <Nav />
         <main className="w-100" style={{ padding: "100px 20px", textAlign: "center" }}>
           <h1>Project not found</h1>
         </main>
         <Footer />
-      </div>
+      </SlideInView>
     );
   }
 
@@ -199,18 +200,18 @@ export default function ProjectDetail() {
 <div className="container-fluid">
   <div className="align-items-center row">
     <div className="d-xl-block col-xxl-5 col-xl-5 d-lg-none">
-      <div className="project-detail-hero-image">
+      <SlideInView className="project-detail-hero-image">
         <img src={project.heroImage} alt={project.title} />
-      </div>
+      </SlideInView>
     </div>
     
     <div className="col-xxl-6 col-xl-6 col-lg-12 solo-paragraph">
-      <h1 className="projects-title remove-margin">{project.title}</h1>
-      <div className="project-detail-intro-text mt-5">
+      <SlideInView className="projects-title remove-margin">{project.title}</SlideInView>
+      <SlideInView className="project-detail-intro-text mt-5">
         {project.intro.split('\n\n').map((paragraph, index) => (
           <p key={index}>{paragraph}</p>
         ))}
-      </div>
+      </SlideInView>
     </div>
   </div>
 </div>
@@ -219,23 +220,22 @@ export default function ProjectDetail() {
         {project.images.map((image, index) => (
           <div key={index}>
             {image.pair ? (
-              // Side by side images
               <section className="project-detail-images-grid">
-                <div className="project-detail-image-item">
+                <SlideInView className="project-detail-image-item">
                   <img src={image.src} alt="" />
                   <p className="image-caption">{image.caption}</p>
-                </div>
-                <div className="project-detail-image-item">
+                </SlideInView>
+                <SlideInView className="project-detail-image-item">
                   <img src={image.pair.src} alt="" />
                   <p className="image-caption">{image.pair.caption}</p>
-                </div>
+                </SlideInView>
               </section>
             ) : (
               // Full width image
-              <section className="project-detail-image-full">
+              <SlideInView className="project-detail-image-full">
                 <img src={image.src} alt="" />
                 <p className="image-caption">{image.caption}</p>
-              </section>
+              </SlideInView>
             )}
           </div>
         ))}
