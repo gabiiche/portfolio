@@ -4,6 +4,7 @@ import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import "../styles/projects.css";
 import SlideInUp from "../components/SlideInUp";
+import SlideInView from "../components/SlideInView";
 
 import nhImage from "../assets/screen/nh.png";
 import ballantinesImage from "../assets/screen/ballantines.png";
@@ -97,15 +98,15 @@ export default function Projects() {
   };
 
   return (
-    <div className="projects-page" ref={containerRef} onMouseMove={handleMouseMove}>
+     <div className="projects-page" ref={containerRef} onMouseMove={handleMouseMove}>
       <Nav />
 
       <main className="w-100 projects-main">
         
-        {/* Hero Section */}
+        {/* Hero Section - CHANGED: Use SlideInView */}
         <section className="row">
           <div className="col-12">
-            <SlideInUp as="h1" className="projects-title">Projects</SlideInUp>
+            <SlideInView as="h1" className="projects-title">Projects</SlideInView>
           </div>
         </section>
 
@@ -113,7 +114,8 @@ export default function Projects() {
         <section className="projects-list">
           {PROJECTS.map((project) => (
             <div key={project.id} className="project-item">
-              <div className="project-description">
+              {/* CHANGED: Wrap project-description in SlideInView */}
+              <SlideInView as="div" className="project-description">
                 <Link
                   to={`/projects/${project.slug}`}
                   className="project-link"
@@ -122,10 +124,10 @@ export default function Projects() {
                 >
                   <h2 className="project-name">{project.name}</h2>
                   <img 
-  src={hoveredProject === project.id ? arrowGrey : arrowWhite} 
-  alt="Arrow" 
-  className="project-arrow"
-/>
+                    src={hoveredProject === project.id ? arrowGrey : arrowWhite} 
+                    alt="Arrow" 
+                    className="project-arrow"
+                  />
                 </Link>
 
                 <div className="project-tags">
@@ -136,9 +138,9 @@ export default function Projects() {
                     </span>
                   ))}
                 </div>
-              </div>
+              </SlideInView>
 
-              <div className="project-divider"></div>
+              <SlideInView className="project-divider"></SlideInView>
             </div>
           ))}
         </section>
