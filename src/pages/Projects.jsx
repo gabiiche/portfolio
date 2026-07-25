@@ -20,14 +20,14 @@ const PROJECTS = [
     id: "national-highways",
     name: "National Highways",
     slug: "national-highways",
-    tags: ["UI Design", "Design System", "UX Design", "Prototype", "Art Direction"],
+    tags: ["UI Design", "Design System", "UX Design", "Prototype"],
     image: nhImage,
   },
   {
     id: "ballantines",
     name: "Ballantine's",
     slug: "ballantines",
-    tags: ["UI Design", "Design System", "Art Direction"],
+    tags: ["UI Design", "Design System", "UX Design"],
     image: ballantinesImage,
   },
   {
