@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "prebuild": "test -x node_modules/.bin/vite || npm ci --include=dev --no-audit --no-fund",
     "build": "vite build",
     "preview": "vite preview"
   },
