@@ -1,6 +1,6 @@
 import NavLink from "./NavLink";
 import ArrowIcon from "./ArrowIcon";
-import logo from "../assets/logo.svg";
+import logo from "../assets/Logo.svg";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from 'react';
 import "../styles/nav-footer.css";
