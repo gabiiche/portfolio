@@ -35,9 +35,6 @@
 }
 
 .project-navigation__arrow {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 20px;
   height: 20px;
   transform: scaleY(-1) rotate(180deg);
@@ -53,10 +50,6 @@
   letter-spacing: 8.4px;
   text-transform: lowercase;
   white-space: nowrap;
-}
-
-.project-navigation__next-link {
-  text-decoration: none;
 }
 
 .project-navigation__next-link:hover .project-navigation__next-text {

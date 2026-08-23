@@ -8,7 +8,7 @@ import "../styles/nav-footer.css";
 
 function FooterLink({ href, icon, iconHover, label, ariaLabel }) {
   return (
-    <a href={href} className="nav-link-gt" aria-label={ariaLabel} target="_blank" rel="noreferrer">
+    <a href={href} className="nav-link-gt d-inline-flex align-items-center gap-4 text-decoration-none" aria-label={ariaLabel} target="_blank" rel="noreferrer">
       <span className="icon icon-lg" aria-hidden="true">
       <img className="icon icon-lg" aria-hidden="true" src={icon} alt="" />
       <img className="icon-hover" src={iconHover} alt="" />

@@ -53,7 +53,7 @@ export default function InternalNavigation({
           aria-label="Back to previous page"
         >
           {/* Arrow Icon */}
-          <div className="project-navigation__arrow">
+          <div className="project-navigation__arrow d-flex align-items-center justify-content-center">
             <img 
               src={isBackHovered ? arrowProjectsGrey : arrowProjectsWhite}
               alt="Arrow"
@@ -68,7 +68,7 @@ export default function InternalNavigation({
         {nextProjectName && (
           <a
             href={nextProjectLink}
-            className="project-navigation__next-link flex-grow-1 d-flex align-items-center justify-content-end"
+            className="project-navigation__next-link flex-grow-1 d-flex align-items-center justify-content-end text-decoration-none"
             onClick={(e) => {
               e.preventDefault();
               handleNextProject();

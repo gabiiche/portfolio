@@ -34,7 +34,7 @@ const [counterDone, setCounterDone] = useState(() => {
         <div className="home d-flex flex-column align-items-center">
           <Nav />
 
-          <header className="header d-flex flex-column align-items-start">
+          <header className="header d-flex flex-column align-items-start justify-content-center">
             <div className="row w-100">
               <div className="col-12">
                 <SlideInUp as="h1" className="display" trigger={counterDone}>Gabrielle</SlideInUp>

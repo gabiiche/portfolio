@@ -18,33 +18,20 @@
 }
 
 .projects-list {
-  display: flex;
-  flex-direction: column;
   gap: 48px;
-  width: 100%;
   margin-top: 48px;
 }
 
 .project-item {
-  display: flex;
-  flex-direction: column;
   gap: clamp(18px, 4vw, 24px);
-  width: 100%;
 }
 
 .project-description {
-  display: flex;
-  flex-direction: column;
   gap: clamp(12px, 3vw, 18px);
 }
 
 /* Project Link */
 .project-link {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  text-decoration: none;
   cursor: pointer;
   transition: opacity 0.3s ease;
 }
@@ -76,13 +63,6 @@
   transform: translate(6px, -6px); 
 }
 
-
-.project-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0;
-  align-items: center;
-}
 
 .project-tag {
   font-family: var(--font-secondary, "Inter", sans-serif);

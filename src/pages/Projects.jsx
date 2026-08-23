@@ -111,26 +111,26 @@ export default function Projects() {
         </section>
 
         {/* Projects List */}
-        <section className="projects-list">
+        <section className="projects-list d-flex flex-column w-100">
           {PROJECTS.map((project) => (
-            <div key={project.id} className="project-item">
+            <div key={project.id} className="project-item d-flex flex-column w-100">
               {/* CHANGED: Wrap project-description in SlideInView */}
-              <SlideInView as="div" className="project-description">
+              <SlideInView as="div" className="project-description d-flex flex-column">
                 <Link
                   to={`/projects/${project.slug}`}
-                  className="project-link"
+                  className="project-link d-flex align-items-center justify-content-between w-100 text-decoration-none"
                   onMouseEnter={() => handleProjectHover(project.id)}
                   onMouseLeave={handleProjectLeave}
                 >
                   <h2 className="project-name">{project.name}</h2>
-                  <img 
-                    src={hoveredProject === project.id ? arrowGrey : arrowWhite} 
-                    alt="Arrow" 
+                  <img
+                    src={hoveredProject === project.id ? arrowGrey : arrowWhite}
+                    alt="Arrow"
                     className="project-arrow"
                   />
                 </Link>
 
-                <div className="project-tags">
+                <div className="project-tags d-flex flex-wrap align-items-center">
                   {project.tags.map((tag, index) => (
                     <span key={index} className="project-tag">
                       {tag}

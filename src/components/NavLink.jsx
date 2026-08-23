@@ -16,13 +16,13 @@ export default function NavLink({ to, href, children, iconLeft = null, iconRight
   // external links (mailto, linkedin, cv pdf) use <a>, internal pages use router <Link>
   if (href) {
     return (
-      <a href={href} className="nav-link-gt" aria-label={ariaLabel} target="_blank" rel="noreferrer">
+      <a href={href} className="nav-link-gt d-inline-flex align-items-center gap-4 text-decoration-none" aria-label={ariaLabel} target="_blank" rel="noreferrer">
         {content}
       </a>
     );
   }
   return (
-    <Link to={to} className="nav-link-gt" aria-label={ariaLabel}>
+    <Link to={to} className="nav-link-gt d-inline-flex align-items-center gap-4 text-decoration-none" aria-label={ariaLabel}>
       {content}
     </Link>
   );
