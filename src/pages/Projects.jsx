@@ -101,7 +101,7 @@ export default function Projects() {
      <div className="projects-page" ref={containerRef} onMouseMove={handleMouseMove}>
       <Nav />
 
-      <main className="w-100 projects-main">
+      <main className="w-100 d-flex flex-column projects-main">
         
         {/* Hero Section - CHANGED: Use SlideInView */}
         <section className="row">
