@@ -41,13 +41,27 @@
 }
 
 .client-logo {
+  width: 100px;
   height: 30.68px;
 }
 
 .client-logo img {
   max-width: 100%;
-  height: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
   object-fit: contain;
+}
+
+/* Some logos read visually smaller than the rest due to thin strokes,
+   low contrast, or a compact shape — nudge them up to match. */
+.client-logo--boost img {
+  transform: scale(1.12);
+}
+
+/* Sugarmoo needs a bigger nudge than the standard boost. */
+.client-logo--boost-lg img {
+  transform: scale(1.3);
 }
 
 /* ========== Portraits Section - FULL WIDTH ========== */

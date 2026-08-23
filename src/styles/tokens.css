@@ -2,15 +2,16 @@
 :root {
   /* background */
   --bg-black: #0e0e0e;
-  --bg-purple: #d230ff;
+  --bg-purple: #d666ff;
 
   /* text */
-  --text-purple: #d230ff;
+  --text-purple: #d666ff;
   --text-white: #f1f1f1;
   --text-grey: #8a8a8a;
+  --text-black: #0e0e0e;
 
   /* stroke */
-  --stroke-purple: rgba(210, 48, 255, 0.5);
+  --stroke-purple: rgba(214, 102, 255, 0.5);
 
   /* type */
   --font-display: "Archivo Black", sans-serif;

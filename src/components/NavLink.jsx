@@ -1,10 +1,13 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 /**
  * NavLink — the Figma "li" component.
  * Default = base style, hover/focus handled in navlink.css.
  */
 export default function NavLink({ to, href, children, iconLeft = null, iconRight = null, ariaLabel }) {
+  const { pathname } = useLocation();
+  const isActive = Boolean(to) && pathname === to;
+
   const content = (
     <>
       {iconLeft && <span className="icon icon-lg" aria-hidden="true">{iconLeft}</span>}
@@ -22,7 +25,12 @@ export default function NavLink({ to, href, children, iconLeft = null, iconRight
     );
   }
   return (
-    <Link to={to} className="nav-link-gt d-inline-flex  gap-4 text-decoration-none" aria-label={ariaLabel}>
+    <Link
+      to={to}
+      className={`nav-link-gt d-inline-flex gap-4 text-decoration-none${isActive ? " is-active" : ""}`}
+      aria-label={ariaLabel}
+      aria-current={isActive ? "page" : undefined}
+    >
       {content}
     </Link>
   );

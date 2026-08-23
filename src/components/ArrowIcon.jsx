@@ -1,7 +1,7 @@
 export default function ArrowIcon() {
   return (
-    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2" width="100%" height="100%">
-      <path d="M4 16 L16 4 M7 4 h9 v9" strokeLinecap="round" strokeLinejoin="round" />
+    <svg viewBox="0 0 22 23" fill="none" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0.706956 20.2929L-0.000151038 21L1.41406 22.4142L2.12117 21.7071L1.41406 21L0.706956 20.2929ZM22.4141 1C22.4141 0.447715 21.9663 0 21.4141 0H12.4141C11.8618 0 11.4141 0.447715 11.4141 1C11.4141 1.55228 11.8618 2 12.4141 2H20.4141V10C20.4141 10.5523 20.8618 11 21.4141 11C21.9663 11 22.4141 10.5523 22.4141 10V1ZM1.41406 21L2.12117 21.7071L22.1212 1.70711L21.4141 1L20.707 0.292893L0.706956 20.2929L1.41406 21Z" fill="currentColor" />
     </svg>
   );
 }

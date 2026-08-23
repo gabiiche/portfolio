@@ -15,7 +15,7 @@
 
 .ticker__track p {
   margin: 0;
-  color: var(--text-purple);
+  color: var(--text-grey);
   text-transform: lowercase;
   white-space: nowrap;
   font-size: var(--copy-font-size);

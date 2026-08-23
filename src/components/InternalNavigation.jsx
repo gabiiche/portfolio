@@ -1,7 +1,5 @@
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import arrowProjectsGrey from "../assets/arrow-projects-grey.svg";
-import arrowProjectsWhite from "../assets/arrow-projects-white.svg";
+import ArrowIcon from "./ArrowIcon";
 import "../styles/internal-navigation.css";
 
 /**
@@ -22,7 +20,6 @@ export default function InternalNavigation({
   nextProjectName, 
   nextProjectLink = "/projects"
 }) {
-  const [isBackHovered, setIsBackHovered] = useState(false);
   const navigate = useNavigate();
 
   const handleBack = () => {
@@ -50,18 +47,13 @@ export default function InternalNavigation({
         <button
           onClick={handleBack}
           className="project-navigation__back-btn d-flex align-items-center gap-4"
-          onMouseEnter={() => setIsBackHovered(true)}
-          onMouseLeave={() => setIsBackHovered(false)}
           aria-label="Back to previous page"
         >
           {/* Arrow Icon */}
-          <div className="project-navigation__arrow d-flex align-items-center justify-content-center">
-            <img 
-              src={isBackHovered ? arrowProjectsGrey : arrowProjectsWhite}
-              alt="Arrow"
-            />
+          <div className="project-navigation__arrow d-flex align-items-center justify-content-center" aria-hidden="true">
+            <ArrowIcon />
           </div>
-          
+
           {/* Back Text */}
           <p className="project-navigation__back-text">Back</p>
         </button>
