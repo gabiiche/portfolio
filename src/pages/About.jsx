@@ -83,26 +83,28 @@ export default function About() {
             </div>
           </SlideInView>
 
-          <SlideInView className="row">
-            <div className="col-6 mt-5 d-xl-none d-lg-block d-md-block d-sm-none d-none">
+          <div className="col-12">
+            <div className="row">
+              <SlideInView as="div" className="col-6 mt-5 d-xl-none d-lg-block d-md-block d-sm-none d-none">
                 <div className="clients-grid d-flex flex-wrap align-items-start">
-    {clientsColumn1.map((item, index) => (
-      <div key={index} className="client-logo d-flex align-items-center justify-content-center">
-        <img src={item.url} alt={item.name} />
-      </div>
-    ))}
-  </div>
+                  {clientsColumn1.map((item, index) => (
+                    <div key={index} className="client-logo d-flex align-items-center justify-content-center">
+                      <img src={item.url} alt={item.name} />
                     </div>
-                    <div className="col-6 mt-5 d-xl-none d-lg-block d-md-block d-sm-none d-none">
-                      <div className="clients-grid d-flex flex-wrap align-items-start">
-    {clientsColumn2.map((item, index) => (
-      <div key={index} className="client-logo d-flex align-items-center justify-content-center">
-        <img src={item.url} alt={item.name} />
-      </div>
-    ))}
-  </div>
+                  ))}
+                </div>
+              </SlideInView>
+              <SlideInView as="div" className="col-6 mt-5 d-xl-none d-lg-block d-md-block d-sm-none d-none">
+                <div className="clients-grid d-flex flex-wrap align-items-start">
+                  {clientsColumn2.map((item, index) => (
+                    <div key={index} className="client-logo d-flex align-items-center justify-content-center">
+                      <img src={item.url} alt={item.name} />
                     </div>
-            </SlideInView>
+                  ))}
+                </div>
+              </SlideInView>
+            </div>
+          </div>
 
         </section>
 

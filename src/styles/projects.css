@@ -102,20 +102,6 @@
 
 /* ========== RESPONSIVE ========== */
 
-/* Tablet (768px+) */
-@media (min-width: 768px) {
-  .project-name {
-    font-size: clamp(40px, 8vw, 48px);
-  }
-
-  .projects-list {
-    margin-top: 90px;
-  }
-
-  .projects-title {
-    margin-top: 150px;
-  }
-}
 
 /* Desktop lg (992px+) */
 @media (min-width: 992px) {
@@ -131,10 +117,31 @@
     gap: 32px;
   }
 }
+/* Tablet (768px+) */
+@media (min-width: 768px) {
+  .project-name {
+    font-size: clamp(40px, 8vw, 48px);
+  }
+
+  .projects-list {
+    margin-top: 90px;
+  }
+
+  .projects-title {
+    margin-top: 150px;
+  }
+}
 
 @media (max-width: 767px) {
   .projects-title {
     margin-top: 48px;
+  }
+   .projects-list {
+    margin-top:36px;
+  }
+
+   .projects-list {
+    gap: 24px;
   }
 }
 
