@@ -181,18 +181,6 @@ export default function ProjectDetail() {
   
   const nextProjectData = nextProject ? PROJECTS_DATA[nextProject] : null;
 
-  if (!project) {
-    return (
-      <SlideInView className="home">
-        <Nav />
-        <main className="w-100" style={{ padding: "100px 20px", textAlign: "center" }}>
-          <h1>Project not found</h1>
-        </main>
-        <Footer />
-      </SlideInView>
-    );
-  }
-
   return (
     <div className="">
       <Nav />
@@ -206,7 +194,7 @@ export default function ProjectDetail() {
     </div>
     
     <div className="col-xxl-6 col-xl-6 col-lg-12 solo-paragraph">
-      <SlideInView className="projects-title remove-margin">{project.title}</SlideInView>
+      <SlideInView className="projects-title">{project.title}</SlideInView>
       <SlideInView className="project-detail-intro-text mt-5">
         {project.intro.split('\n\n').map((paragraph, index) => (
           <p key={index}>{paragraph}</p>
@@ -215,24 +203,24 @@ export default function ProjectDetail() {
     </div>
   </div>
 </div>
-<main className="project-detail-main">
+<main className="project-detail-main d-flex flex-column gap-4">
      {/* Images with captions */}
         {project.images.map((image, index) => (
           <div key={index}>
             {image.pair ? (
               <section className="project-detail-images-grid">
-                <SlideInView className="project-detail-image-item">
+                <SlideInView className="project-detail-image-item w-100">
                   <img src={image.src} alt="" />
                   <p className="image-caption">{image.caption}</p>
                 </SlideInView>
-                <SlideInView className="project-detail-image-item">
+                <SlideInView className="project-detail-image-item w-100">
                   <img src={image.pair.src} alt="" />
                   <p className="image-caption">{image.pair.caption}</p>
                 </SlideInView>
               </section>
             ) : (
               // Full width image
-              <SlideInView className="project-detail-image-full">
+              <SlideInView className="project-detail-image-full w-100">
                 <img src={image.src} alt="" />
                 <p className="image-caption">{image.caption}</p>
               </SlideInView>

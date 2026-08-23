@@ -2,9 +2,7 @@
 
 
 .projects-main {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
+  padding: 0 var(--gutter-x);
 }
 
 /* ========== HERO SECTION ========== */
@@ -20,33 +18,20 @@
 }
 
 .projects-list {
-  display: flex;
-  flex-direction: column;
   gap: 48px;
-  width: 100%;
   margin-top: 48px;
 }
 
 .project-item {
-  display: flex;
-  flex-direction: column;
   gap: clamp(18px, 4vw, 24px);
-  width: 100%;
 }
 
 .project-description {
-  display: flex;
-  flex-direction: column;
   gap: clamp(12px, 3vw, 18px);
 }
 
 /* Project Link */
 .project-link {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  text-decoration: none;
   cursor: pointer;
   transition: opacity 0.3s ease;
 }
@@ -78,13 +63,6 @@
   transform: translate(6px, -6px); 
 }
 
-
-.project-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0;
-  align-items: center;
-}
 
 .project-tag {
   font-family: var(--font-secondary, "Inter", sans-serif);
@@ -129,11 +107,18 @@
   .project-name {
     font-size: clamp(40px, 8vw, 48px);
   }
+
+  .projects-list {
+    margin-top: 90px;
+  }
+
+  .projects-title {
+    margin-top: 150px;
+  }
 }
 
 /* Desktop lg (992px+) */
 @media (min-width: 992px) {
-
   .projects-title {
     font-size: 78px;
   }
@@ -147,47 +132,11 @@
   }
 }
 
-@media (min-width: 375px) {
-  .projects-main {
-    padding: 0 18px;
+@media (max-width: 767px) {
+  .projects-title {
+    margin-top: 48px;
   }
 }
-
-@media (min-width: 576px) {
-  .projects-main {
-    padding: 0 18px;
-  }
-}
-
-@media (min-width: 768px) {
-  .projects-main {
-    padding: 0 24px;
-  }
-}
-
-
-@media (min-width: 992px) {
-  .projects-main {
-    padding: 0 98px;
-  }
-}
-
-/* Desktop xl (1200px+) */
-@media (min-width: 1200px) {
-  .projects-main {
-    padding: 0 97px;
-  }
-}
-
-/* Desktop xxl (1400px+) */
-@media (min-width: 1400px) {
-
-  .projects-main {
-    padding: 0 112px;
-  }
-
-}
-
 
 @media (prefers-reduced-motion: reduce) {
   .project-arrow {
@@ -200,23 +149,5 @@
 
   .project-hover-image img {
     animation: none;
-  }
-}
-
-@media (min-width: 768px) {
-  .projects-list {
-    margin-top: 90px;
-  }
-  .projects-title{
-    margin-top: 150px;
-  }
-}
-
-@media (max-width: 767px) {
-  .projects-list {
-    margin-top: 48px;
-  }
-    .projects-title{
-    margin-top: 48px;
   }
 }

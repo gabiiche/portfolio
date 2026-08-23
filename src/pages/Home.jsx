@@ -31,15 +31,19 @@ const [counterDone, setCounterDone] = useState(() => {
       {!counterDone && <IntroCounter onFinish={() => setCounterDone(true)} />}
 
       {counterDone && (
-        <div className="home">
+        <div className="home d-flex flex-column align-items-center">
           <Nav />
 
-          <header className="header">
-            <SlideInUp as="h1" className="display" trigger={counterDone}>Gabrielle</SlideInUp>
-            <div className={`ticker-slide-in ${tickerIn ? "in" : ""}`}>
-              <Ticker />
+          <header className="header d-flex flex-column align-items-start justify-content-center">
+            <div className="row w-100">
+              <div className="col-12">
+                <SlideInUp as="h1" className="display" trigger={counterDone}>Gabrielle</SlideInUp>
+                <div className={`ticker-slide-in ${tickerIn ? "in" : ""}`}>
+                  <Ticker />
+                </div>
+                <SlideInUp as="h1" className="display" trigger={counterDone}>Toure</SlideInUp>
+              </div>
             </div>
-            <SlideInUp as="h1" className="display" trigger={counterDone}>Toure</SlideInUp>
           </header>
 
           <Footer />

@@ -54,7 +54,7 @@ export default function About() {
     <div className="">
       <Nav />
 
-      <main className="w-100 about-main about-title-section">
+      <main className="w-100 d-flex flex-column about-main about-title-section">
         
         <section className="row">
           <SlideInView className="col-12 col-lg-6">
@@ -74,9 +74,9 @@ export default function About() {
             <h2 className="about-section-title">Clients</h2>
           </SlideInView>
           <SlideInView className="col-xl-6 d-xl-block d-lg-none d-md-none d-sm-block col-12 mt-lg-0 mt-5">
-            <div className="clients-grid">
+            <div className="clients-grid d-flex flex-wrap align-items-start">
               {ABOUT_CONTENT.clients.map((item, index) => (
-                <div key={index} className="client-logo">
+                <div key={index} className="client-logo d-flex align-items-center justify-content-center">
                   <img src={item.url} alt={item.name} title={item.name} />
                 </div>
               ))}
@@ -85,18 +85,18 @@ export default function About() {
 
           <SlideInView className="row">
             <div className="col-6 mt-5 d-xl-none d-lg-block d-md-block d-sm-none d-none">
-                <div className="clients-grid">
+                <div className="clients-grid d-flex flex-wrap align-items-start">
     {clientsColumn1.map((item, index) => (
-      <div key={index} className="client-logo">
+      <div key={index} className="client-logo d-flex align-items-center justify-content-center">
         <img src={item.url} alt={item.name} />
       </div>
     ))}
   </div>
                     </div>
                     <div className="col-6 mt-5 d-xl-none d-lg-block d-md-block d-sm-none d-none">
-                      <div className="clients-grid">
+                      <div className="clients-grid d-flex flex-wrap align-items-start">
     {clientsColumn2.map((item, index) => (
-      <div key={index} className="client-logo">
+      <div key={index} className="client-logo d-flex align-items-center justify-content-center">
         <img src={item.url} alt={item.name} />
       </div>
     ))}

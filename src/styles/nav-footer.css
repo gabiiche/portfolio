@@ -1,9 +1,6 @@
 .nav-wrap {
   width: 100%;
-  padding: 18px 18px 0 18px;  /* xs: top 18px */
-  display: flex;
-  align-items: center;
-  justify-content: space-between !important;
+  padding: 18px var(--gutter-x) 0 var(--gutter-x);  /* xs: top 18px */
 }
 
 /* Nav link type scales down on mobile */
@@ -27,32 +24,11 @@
 /* Footer styling */
 .footer-wrap {
   width: 100%;
-  padding: 0 18px 18px 18px;  /* xs: bottom 18px */
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  padding: 0 var(--gutter-x) 18px var(--gutter-x);  /* xs: bottom 18px */
 }
 
-
-@media (max-width: 768px) {
-  .footer-label { display: none; }
-}
-
-
-.footer-links { 
+.footer-links {
   gap: 40px;
-}
-
-@media (min-width: 576px) {
-  .footer-links { gap: 40px; }
-}
-
-@media (min-width: 992px) {
-  .footer-links { gap: 24px; }
-}
-
-@media (min-width: 1200px) {
-  .footer-links { gap: 72px; }
 }
 
 /* Copyright */
@@ -71,56 +47,40 @@ main {
 }
 
 @media (min-width: 375px) {
-  .nav-wrap {
-    padding: 18px 18px 0 18px; 
-  }
   .footer-wrap {
-    padding: 48px 18px 18px 18px;  
+    padding-top: 48px;
   }
 }
 
-
-@media (min-width: 576px) {
-  .nav-wrap {
-    padding: 18px 18px 0 18px; 
-  }
-  .footer-wrap {
-    padding: 48px 18px 18px 18px; 
-  }
+@media (max-width: 768px) {
+  .footer-label { display: none; }
 }
 
 @media (min-width: 768px) {
   .nav-wrap {
-    padding: 48px 24px 0 24px;  /* md: top 48px */
+    padding-top: 48px;  /* md: top 48px */
   }
   .footer-wrap {
-    padding: 48px 24px 48px 24px;  /* md: bottom 48px */
+    padding-top: 48px;
+    padding-bottom: 48px;  /* md: bottom 48px */
   }
 }
 
 @media (min-width: 992px) {
   .nav-wrap {
-    padding: 72px 98px 0 98px;  /* lg: top 72px */
+    padding-top: 72px;  /* lg: top 72px */
   }
   .footer-wrap {
-    padding: 150px 98px 72px 98px;  /* lg: bottom 72px */
+    padding-top: 150px;
+    padding-bottom: 72px;  /* lg: bottom 72px */
+  }
+  .footer-links {
+    gap: 24px;
   }
 }
 
 @media (min-width: 1200px) {
-  .nav-wrap {
-    padding: 72px 97px 0 97px;  /* xl: top 72px */
-  }
-  .footer-wrap {
-    padding: 150px 97px 72px 97px;  /* xl: bottom 72px */
-  }
-}
-
-@media (min-width: 1400px) {
-  .nav-wrap {
-    padding: 72px 112px 0 112px;  /* xxl: top 72px */
-  }
-  .footer-wrap {
-    padding: 150px 112px 72px 112px;  /* xxl: bottom 72px */
+  .footer-links {
+    gap: 72px;
   }
 }
