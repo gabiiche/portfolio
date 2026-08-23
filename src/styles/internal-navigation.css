@@ -26,12 +26,34 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
-  padding: 0;
-  transition: all 0.3s ease;
+  padding: 8px 16px;
+  position: relative;
+  overflow: hidden;
+  color: var(--text-purple);
+  transition: color var(--transition);
 }
 
-.project-navigation__back-btn:hover .project-navigation__back-text {
-  color: var(--text-grey, #8a8a8a);
+.project-navigation__back-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--bg-purple);
+  transform: translateY(100%);
+  transition: transform var(--transition);
+  z-index: -1;
+}
+
+.project-navigation__back-btn:hover {
+  color: var(--text-white);
+}
+
+.project-navigation__back-btn:hover::before {
+  transform: translateY(0);
+}
+
+.project-navigation__back-btn:focus-visible {
+  outline: 3px solid var(--stroke-purple);
+  outline-offset: 0;
 }
 
 .project-navigation__arrow {
@@ -40,13 +62,17 @@
   transform: scaleY(-1) rotate(180deg);
 }
 
+.project-navigation__arrow svg {
+  width: 100%;
+  height: 100%;
+}
+
 .project-navigation__back-text {
   margin: 0;
   font-family: 'Inter', sans-serif;
   font-size: 24px;
   font-weight: 400;
   line-height: 30px;
-  color: #f1f1f1;
   letter-spacing: 8.4px;
   text-transform: lowercase;
   white-space: nowrap;
@@ -92,5 +118,12 @@
   .project-navigation__next-text {
     font-size: 24px;
     line-height: 28px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-navigation__back-btn,
+  .project-navigation__back-btn::before {
+    transition: none;
   }
 }

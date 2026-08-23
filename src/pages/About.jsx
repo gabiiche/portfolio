@@ -49,6 +49,20 @@ const midpoint = Math.ceil(ABOUT_CONTENT.clients.length / 2);
 const clientsColumn1 = ABOUT_CONTENT.clients.slice(0, midpoint);
 const clientsColumn2 = ABOUT_CONTENT.clients.slice(midpoint);
 
+// These logos read visually smaller than the rest of the grid (thin
+// strokes / low contrast / compact shape), so they get a size boost.
+// Sugarmoo and Unilever need a bigger nudge than the standard boost.
+const BOOST_LOGOS = new Set(["BMW", "Pint", "Lucky Bet", "Kimberly-Clark"]);
+const BOOST_LOGOS_LG = new Set(["Sugarmoo", "Unilever"]);
+const clientLogoClass = (name) => {
+  const boost = BOOST_LOGOS_LG.has(name)
+    ? " client-logo--boost-lg"
+    : BOOST_LOGOS.has(name)
+    ? " client-logo--boost"
+    : "";
+  return `client-logo d-flex align-items-center justify-content-center${boost}`;
+};
+
 export default function About() {
   return (
     <div className="">
@@ -76,7 +90,7 @@ export default function About() {
           <SlideInView className="col-xl-6 d-xl-block d-lg-none d-md-none d-sm-block col-12 mt-lg-0 mt-5">
             <div className="clients-grid d-flex flex-wrap align-items-start">
               {ABOUT_CONTENT.clients.map((item, index) => (
-                <div key={index} className="client-logo d-flex align-items-center justify-content-center">
+                <div key={index} className={clientLogoClass(item.name)}>
                   <img src={item.url} alt={item.name} title={item.name} />
                 </div>
               ))}
@@ -88,7 +102,7 @@ export default function About() {
               <SlideInView as="div" className="col-6 mt-5 d-xl-none d-lg-block d-md-block d-sm-none d-none">
                 <div className="clients-grid d-flex flex-wrap align-items-start">
                   {clientsColumn1.map((item, index) => (
-                    <div key={index} className="client-logo d-flex align-items-center justify-content-center">
+                    <div key={index} className={clientLogoClass(item.name)}>
                       <img src={item.url} alt={item.name} />
                     </div>
                   ))}
@@ -97,7 +111,7 @@ export default function About() {
               <SlideInView as="div" className="col-6 mt-5 d-xl-none d-lg-block d-md-block d-sm-none d-none">
                 <div className="clients-grid d-flex flex-wrap align-items-start">
                   {clientsColumn2.map((item, index) => (
-                    <div key={index} className="client-logo d-flex align-items-center justify-content-center">
+                    <div key={index} className={clientLogoClass(item.name)}>
                       <img src={item.url} alt={item.name} />
                     </div>
                   ))}
