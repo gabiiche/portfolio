@@ -1,7 +1,8 @@
 import { useState } from "react";
-import arrowProjectsGrey from "../assets/arrow-projects-grey.svg"; 
+import { useNavigate } from "react-router-dom";
+import arrowProjectsGrey from "../assets/arrow-projects-grey.svg";
 import arrowProjectsWhite from "../assets/arrow-projects-white.svg";
-import "../styles/internal-navigation.css"; 
+import "../styles/internal-navigation.css";
 
 /**
  * InternalNavigation Component
@@ -22,15 +23,16 @@ export default function InternalNavigation({
   nextProjectLink = "/projects"
 }) {
   const [isBackHovered, setIsBackHovered] = useState(false);
+  const navigate = useNavigate();
 
   const handleBack = () => {
-    window.scrollTo({ top: 0, behavior: 'auto' }); 
-    window.history.back(); 
+    window.scrollTo({ top: 0, behavior: 'auto' });
+    window.history.back();
   };
 
   const handleNextProject = () => {
-    window.scrollTo({ top: 0, behavior: 'auto' }); 
-    window.location.href = nextProjectLink;
+    window.scrollTo({ top: 0, behavior: 'auto' });
+    navigate(nextProjectLink);
   };
 
   return (

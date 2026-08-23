@@ -1,3 +1,7 @@
+.ticker {
+  overflow: hidden;
+}
+
 .ticker__track {
   display: flex;
   gap: 54px;

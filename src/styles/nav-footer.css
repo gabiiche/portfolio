@@ -8,7 +8,6 @@
   font-size: 18px;
   line-height: 30px;
   letter-spacing: 6.3px;
-  align-items: normal;
 }
 
 .nav-link-gt .icon { 
@@ -46,7 +45,7 @@ main {
   padding: 0;
 }
 
-@media (min-width: 375px) {
+@media (min-width: 0px) {
   .footer-wrap {
     padding-top: 48px;
   }

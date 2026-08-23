@@ -215,7 +215,7 @@ export default function ProjectDetail() {
                 </SlideInView>
                 <SlideInView className="project-detail-image-item w-100">
                   <img src={image.pair.src} alt="" />
-                  <p className="image-caption">{image.pair.caption}</p>
+                  <p className="image-caption d-md-none">{image.pair.caption || image.caption}</p>
                 </SlideInView>
               </section>
             ) : (

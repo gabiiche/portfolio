@@ -22,7 +22,7 @@ export default function NavLink({ to, href, children, iconLeft = null, iconRight
     );
   }
   return (
-    <Link to={to} className="nav-link-gt d-inline-flex align-items-center gap-4 text-decoration-none" aria-label={ariaLabel}>
+    <Link to={to} className="nav-link-gt d-inline-flex  gap-4 text-decoration-none" aria-label={ariaLabel}>
       {content}
     </Link>
   );
