@@ -4,6 +4,8 @@ import IconEmail from "../assets/email.svg";
 import IconLinkedin from "../assets/Linkedin.svg";
 import IconEmailWhite from "../assets/email-white.svg";
 import IconLinkedinWhite from "../assets/Linkedin-white.svg";
+import IconGithub from "../assets/Github.svg";
+import IconGithubWhite from "../assets/Github-white.svg";
 import "../styles/nav-footer.css";
 
 function FooterLink({ href, icon, iconHover, label, ariaLabel }) {
@@ -25,6 +27,7 @@ export default function Footer({ className = "" }) {
       <ul className="footer-links d-flex align-items-center list-unstyled m-0">
         <li><FooterLink href="mailto:toureegabrielle@gmail.com" icon={IconEmail} iconHover={IconEmailWhite} label="email" ariaLabel="Email Gabrielle" /></li>
         <li><FooterLink href="https://www.linkedin.com/in/gabrielle-toure/" icon={IconLinkedin} iconHover={IconLinkedinWhite} label="linkedin" ariaLabel="LinkedIn profile" /></li>
+        <li><FooterLink href="https://github.com/gabiiche" icon={IconGithub} iconHover={IconGithubWhite} label="github" ariaLabel="GitHub profile" /></li>
       </ul>
     </div>
   );

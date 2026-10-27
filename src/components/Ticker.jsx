@@ -1,9 +1,9 @@
 const SKILLS = [
-  "ux design", "ui design", "product design",
-  "design system", "prototype", "accessibility",
+  "product design", "design system", "design engineering",
+  "front end", "react", "ai-assisted design", "claude code",
+  "accessibility", "ux design", "ui design",
+  "prototype", "ux research", "data visualisation",
   "brand identity", "art direction",
-  "ux research", "data visualisation",
-  "front end", "wordpress",
 ];
 
 export default function Ticker({ items = SKILLS, isImage = false }) {

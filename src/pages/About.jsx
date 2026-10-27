@@ -25,7 +25,7 @@ import portrait1 from "../assets/portrait-1.png";
 const ABOUT_CONTENT = {
   title: "About me",
   intro: [
-    "I'm Gabrielle, a digital designer in London, crafting design systems and interfaces, brand identities, with front-end knowledge that lets me design what ships and follow it into the build. I care about the details: accessibility, focus states and pixel perfection.",
+    "I'm Gabrielle, a digital designer based in London, crafting design systems, interfaces and brand identities. I design in Figma and build in React, so I can build from scratch. I've started using AI for repetitive work, like auditing a library or setting up variables. I make the calls on structure and rules, and AI helps me bring my designs to life in code. This portfolio is an example: Figma AI, the Figma connector and Claude Code made it possible. With AI and my own knowledge, I build faster while keeping the details I care about: accessibility, focus states and pixel perfection.",
     "Off duty, I lose myself in RPGs, Baldur's Gate 3, I've completed every Ace Attorney game, I love reading manga, and I gather with friends for D&D campaigns, where I've learned a party only survives by playing together.",
   ],
   clients: [

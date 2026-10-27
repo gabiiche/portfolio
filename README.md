@@ -1,41 +1,35 @@
-# Portfolio 26 — Gabrielle Touré
+# Gabrielle Touré
 
-## 1. Run it locally (your machine only)
+This is Gabrielle Touré's portfolio, live at https://gabrielle-toure.netlify.app
 
-You need Node.js installed (nodejs.org, LTS version).
+![Home page](./docs/home.png)
+
+## How it's built
+
+- React 18 with React Router 6
+- Vite 5
+- Bootstrap 5 (CSS only, for layout and utility classes)
+- Designed in Figma. Colours and type are Figma variables, carried over as CSS custom properties.
+- Deployed on Netlify
+
+Designed and built from scratch, without a template.
+
+## Working with AI
+
+I designed the site in Figma, with Figma AI and the Figma connector, and built it with Claude Code. I decide the structure, the components and the rules. AI speeds up the repetitive work and helps me bring the designs to life in code.
+
+## Design decisions
+
+- The scrolling keywords on the home page are one list, rendered twice and moved by a CSS animation so the loop has no end. It is hidden from screen readers and stops for people who prefer reduced motion.
+- Small reusable components (Nav, Footer, NavLink, Ticker), with all design tokens in one file, `tokens.css`.
+- Links show a visible purple focus outline for keyboard users, and the current page is marked with `aria-current`.
+
+## Run it locally
 
 ```bash
-npm install     # once, installs React, Bootstrap, etc.
-npm run dev     # starts the site at http://localhost:5173
+npm install
+npm run dev     # http://localhost:5173
+npm run build
 ```
 
-That's it — the site runs only on your computer. Save a file, the browser updates instantly.
-
-## 2. Put it on STAGING (online but private, not indexed)
-
-Easiest way — Vercel (free):
-
-1. Push this folder to a GitHub repo (can be private).
-2. Go to vercel.com → sign in with GitHub → "Add New Project" → import your repo.
-3. Vercel detects Vite automatically → click Deploy.
-4. You get a URL like `portfolio-26-xxx.vercel.app` — that's your staging.
-
-Staging protection already included: `index.html` has
-`<meta name="robots" content="noindex, nofollow" />` so Google won't index it.
-For real privacy, in Vercel: Settings → Deployment Protection → password.
-
-Every git push = automatic new deploy. Preview links per branch too.
-
-## 3. Going LIVE later
-
-- Remove the `noindex` meta tag from index.html
-- Add your domain in Vercel → Settings → Domains
-
-## To do before launch
-
-- [ ] Replace /public/assets/logo.svg with your GT logo export
-- [ ] Add cv PDF at /public/assets/cv-gabrielle-toure.pdf
-- [ ] Benton Sans font files (or licensed webfont) — currently falls back to Inter
-- [ ] Build each page from its Figma frame (stubs in place)
-- [ ] Alt text on all case study images
-- [ ] Remove noindex when going live
+Contact: [LinkedIn](https://www.linkedin.com/in/gabrielle-toure/) or toureegabrielle@gmail.com
